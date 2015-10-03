@@ -1,6 +1,7 @@
 package im.actor.messenger.app.view.keyboard.emoji.smiles;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import im.actor.messenger.R;
+import im.actor.messenger.app.activity.NisEmojiActivity;
 import im.actor.messenger.app.view.emoji.smiles.SmilesPack;
 import im.actor.messenger.app.view.emoji.smiles.SmilesPackView;
 import im.actor.messenger.app.view.keyboard.emoji.EmojiKeyboard;
@@ -31,6 +33,8 @@ public class SmilePagerAdapter extends PagerAdapter implements PagerSlidingTabSt
     public SmilePagerAdapter(EmojiKeyboard emojiKeyboard) {
         this.emojiKeyboard = emojiKeyboard;
     }
+
+    int position_outter =0;
 
     @Override
     public int getCount() {
@@ -61,7 +65,12 @@ public class SmilePagerAdapter extends PagerAdapter implements PagerSlidingTabSt
                 break;
 
             case 5:
+                /*
+                Intent myIntent = new Intent(this, NisEmojiActivity.class);
+                myIntent.putExtra("key", value); //Optional parameters
+                */
                 emojiPack = new ArrayList<Long>(Arrays.asList(SmilesPack.TRANSPORT));
+
                 break;
 
         }
@@ -72,7 +81,7 @@ public class SmilePagerAdapter extends PagerAdapter implements PagerSlidingTabSt
         if (Screen.getWidth() / emojiSize < emojisMaxRowCount) {
             emojisMaxRowCount = Screen.getWidth() / emojiSize;
         }
-        final SmilesPackView smilesPackView = new SmilesPackView(container.getContext(), getSmileProcessor(), emojiPack, emojisMaxRowCount, emojiSize, emojiPadding);
+        final SmilesPackView smilesPackView = new SmilesPackView(container.getContext(), getSmileProcessor(), emojiPack, emojisMaxRowCount, emojiSize, emojiPadding,position);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER;
         emojicontainer.addView(smilesPackView, params);

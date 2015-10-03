@@ -293,6 +293,11 @@
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name="im.actor.messenger.app.activity.NisEmojiActivity"
+            android:label="@string/title_activity_nis_emoji" >
+        </activity>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

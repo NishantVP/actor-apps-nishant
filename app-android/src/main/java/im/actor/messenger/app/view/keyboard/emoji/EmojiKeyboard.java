@@ -17,14 +17,24 @@
 package im.actor.messenger.app.view.keyboard.emoji;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.io.IOException;
 
 import im.actor.messenger.R;
+import im.actor.messenger.app.AnimatedGifDrawable;
+import im.actor.messenger.app.AnimatedImageSpan;
 import im.actor.messenger.app.view.emoji.SmileProcessor;
 import im.actor.messenger.app.view.keyboard.BaseKeyboard;
 import im.actor.messenger.app.view.keyboard.emoji.smiles.OnBackspaceClickListener;
@@ -34,6 +44,7 @@ import im.actor.messenger.app.view.keyboard.emoji.smiles.SmilePagerAdapter;
 import im.actor.messenger.app.util.Screen;
 import im.actor.messenger.app.view.MaterialInterpolator;
 import im.actor.messenger.app.view.PagerSlidingTabStrip;
+import im.actor.runtime.android.AndroidContext;
 
 import static im.actor.messenger.app.core.Core.getSmileProcessor;
 
@@ -60,7 +71,48 @@ public class EmojiKeyboard extends BaseKeyboard implements OnSmileClickListener,
         CharSequence appendString = getSmileProcessor().processEmojiMutable(smile,
                 SmileProcessor.CONFIGURATION_BUBBLES);
 
-        messageBody.getText().insert(selectionEnd, appendString);
+        //Spanned cs = null;
+        //cs = Html.fromHtml("<img src='" + "ImageName.png"
+        //        + "'/>", imageGetter, null);
+        //int start = messaage.getSelectionStart();
+        //int end = messaage.getSelectionEnd();
+        //messaage.getText().replace(Math.min(start, end),
+         //       Math.max(start, end), cs, 0, 1);
+
+        /*
+        View v =  new ImageView(this.activity);
+        ImageView image;
+        image = new ImageView(v.getContext());
+        image.setImageDrawable(v.getResources().getDrawable(R.drawable.pikachu));
+        Drawable drawable = image.getDrawable();
+
+        drawable .setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+
+
+        SpannableStringBuilder builder = new SpannableStringBuilder("hello");
+        builder.setSpan(new ImageSpan(drawable), 0, 5, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        messageBody.setText(builder);
+        messageBody.setSelection(0);
+
+        */
+
+        SpannableStringBuilder sb = new SpannableStringBuilder();
+        sb.append("Text followed by animated gif: ");
+        String dummyText = "dummy";
+        sb.append(dummyText);
+        try {
+            sb.setSpan(new AnimatedImageSpan(new AnimatedGifDrawable(AndroidContext.getContext().getAssets().open("pikachu.gif"), new AnimatedGifDrawable.UpdateListener() {
+                @Override
+                public void update() {
+                    messageBody.postInvalidate();
+                }
+            })), sb.length() - dummyText.length(), sb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        messageBody.setText(sb);
+
+       // messageBody.getText().insert(selectionEnd, appendString);
     }
 
     @Override

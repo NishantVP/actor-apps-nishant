@@ -888,6 +888,11 @@
     <string name="about_group_empty">Set group description</string>
     <string name="about_user">About user</string>
     <string name="about_user_me">About me</string>
+    <!-- From: file:/home/nishant/AndroidStudioProjects/actor-apps/app-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <!-- From: file:/home/nishant/AndroidStudioProjects/actor-apps/app-android/src/main/res/values/ui_text.xml -->
+    <eat-comment/>
     <string name="add_contact_bar_cancel">CANCEL</string>
     <string name="add_contact_bar_continue">CONTINUE</string>
     <string name="add_contact_phone_hint">Enter phone number</string>
@@ -1113,6 +1118,11 @@
     <string name="group_shared_files">Documents</string>
     <string name="group_shared_header">Shared</string>
     <string name="group_title">Group Info</string>
+    <!-- From: file:/home/nishant/AndroidStudioProjects/actor-apps/app-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="hello_world">Hello world!</string>
+    <!-- From: file:/home/nishant/AndroidStudioProjects/actor-apps/app-android/src/main/res/values/ui_text.xml -->
+    <eat-comment/>
     <string name="help_about_subtitle">About app and service</string>
     <string name="help_about_title">About</string>
     <string name="help_email_subject">Feedback</string>
@@ -1299,6 +1309,11 @@
     <eat-comment/>
     <string name="theme_group">Group theme</string>
     <string name="theme_group_empty">Set group theme</string>
+    <!-- From: file:/home/nishant/AndroidStudioProjects/actor-apps/app-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="title_activity_nis_emoji">NisEmojiActivity</string>
+    <!-- From: file:/home/nishant/AndroidStudioProjects/actor-apps/app-android/src/main/res/values/ui_text.xml -->
+    <eat-comment/>
     <string name="toast_already_member">User is already member of group</string>
     <string name="toast_empty_about">About can\'t be empty</string>
     <string name="toast_empty_name">Name can\'t be empty</string>

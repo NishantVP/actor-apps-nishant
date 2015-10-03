@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="im.actor.messenger">
+    package="im.actor.messenger" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -48,11 +48,11 @@
         android:required="false" />
 
     <application
-        android:name="im.actor.messenger.app.ActorApplication"
+        android:name=".app.ActorApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name">
+        android:label="@string/app_name" >
 
         <!-- Tour -->
         <activity
@@ -69,7 +69,6 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".app.fragment.auth.PickCountryActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
@@ -79,19 +78,19 @@
         <!-- Chat -->
 
         <activity
-            android:name="im.actor.messenger.app.activity.MainActivity"
+            android:name=".app.activity.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:theme="@style/MainActivityTheme"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
@@ -104,31 +103,31 @@
                     android:scheme="https" />
                 <data android:scheme="actor" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:scheme="actor" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="app.actor.im"
                     android:scheme="https" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <action android:name="android.intent.action.SEND_MULTIPLE" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="*/*" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".app.fragment.chat.ChatActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
@@ -141,16 +140,13 @@
             android:name=".app.fragment.profile.ProfileActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/ProfileActivityTheme"
-            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden">
-
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden" >
         </activity>
-
         <activity
             android:name=".app.fragment.group.GroupInfoActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/ProfileActivityTheme"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden" />
-
         <activity
             android:name=".app.fragment.settings.MyProfileActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
@@ -164,25 +160,21 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".app.fragment.group.AddMemberActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".app.fragment.group.InviteLinkActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".app.fragment.group.IntegrationTokenActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".app.fragment.compose.CreateGroupActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
@@ -196,19 +188,16 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden" />
-
         <activity
             android:name=".app.fragment.settings.ChatSettingsActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden" />
-
         <activity
             android:name=".app.fragment.help.HelpActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden" />
-
         <activity
             android:name=".app.fragment.settings.SecuritySettingsActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
@@ -222,25 +211,21 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden" />
-
         <activity
             android:name=".app.fragment.preview.PictureActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/PictureFullscreenTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".app.fragment.preview.CodePreviewActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".app.fragment.media.DocumentsActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize" />
-
 
         <!-- Actions -->
         <activity
@@ -248,25 +233,21 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
-
         <activity
             android:name=".app.fragment.settings.EditAboutActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
-
         <activity
-            android:name="im.actor.messenger.app.activity.AddContactActivity"
+            android:name=".app.activity.AddContactActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
-
         <activity
             android:name=".app.fragment.group.JoinPublicGroupActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/CommonActivityTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".app.fragment.group.JoinGroupPopUpActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
@@ -278,10 +259,7 @@
             android:name=".app.activity.TakePhotoActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/Theme.Transparent" />
-
         <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
-
-
         <activity
             android:name="com.droidkit.pickers.file.FilePickerActivity"
             android:label="@string/picker_file_activity_title"
@@ -290,7 +268,6 @@
         <meta-data
             android:name="com.crashlytics.ApiKey"
             android:value="d78e94b0dcd206307a64bfe0bbfaaf6b4713aea6" />
-
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyCFJeO63cmT6zvLT2WW7ye8bnPzuIKaMMg" />
@@ -301,13 +278,19 @@
             android:exported="true" />
 
         <receiver
-            android:name="im.actor.messenger.PushReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+            android:name=".PushReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
                 <category android:name="${applicationId}" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".app.activity.NisEmojiActivity"
+            android:label="@string/title_activity_nis_emoji" >
+        </activity>
     </application>
+
 </manifest>
