@@ -1,6 +1,7 @@
 package im.actor.messenger.app.fragment.chat.messages;
 
 import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
@@ -8,11 +9,16 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 import im.actor.core.entity.Message;
 import im.actor.messenger.R;
+import im.actor.messenger.app.AnimatedGifDrawable;
+import im.actor.messenger.app.AnimatedImageSpan;
 import im.actor.messenger.app.util.TextUtils;
 import im.actor.messenger.app.view.Fonts;
 import im.actor.messenger.app.view.TintImageView;
+import im.actor.runtime.android.AndroidContext;
 
 import static im.actor.messenger.app.core.Core.myUid;
 
@@ -74,7 +80,29 @@ public class TextHolder extends MessageHolder {
             text.setTypeface(Fonts.regular());
         }
 
-        text.setText(rawText);
+        if(rawText.toString().equals("dummy"))
+        {
+            SpannableStringBuilder sb = new SpannableStringBuilder();
+            String dummyText = "dummy";
+             sb.append(dummyText);
+            try {
+                sb.setSpan(new AnimatedImageSpan(new AnimatedGifDrawable(AndroidContext.getContext().getAssets().open("pikachu.gif"), new AnimatedGifDrawable.UpdateListener() {
+                    @Override
+                    public void update() {
+                        text.postInvalidate();
+                    }
+                })), sb.length() - 5, sb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            text.setText(sb);
+
+        }
+        else
+        {
+            text.setText(rawText);
+        }
+
 
         // Fixing url long tap
         text.setMovementMethod(new CustomLinkMovementMethod());

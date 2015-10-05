@@ -5,6 +5,8 @@
       <root url="jar://$PROJECT_DIR$/app-android/build/intermediates/exploded-aar/com.droidkit/progress/0.5/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.droidkit/progress/0.5/4dbcd9e58736d4ea64aafebe6fab1d7881f0a413/progress-0.5-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

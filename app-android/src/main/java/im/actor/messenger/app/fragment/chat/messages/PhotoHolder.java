@@ -234,8 +234,15 @@ public class PhotoHolder extends MessageHolder {
             } else if (fileMessage.getSource() instanceof FileLocalSource) {
                 uploadFileVM = messenger().bindUpload(message.getRid(), new UploadVMCallback());
                 if (isPhoto) {
+
                     previewView.setImageURI(Uri.fromFile(
-                            new File(((FileLocalSource) fileMessage.getSource()).getFileDescriptor())));
+                           new File(((FileLocalSource) fileMessage.getSource()).getFileDescriptor())));
+
+                    //Nishant
+                    String path = "res:/" + R.drawable.pikachu; // Only one slash after res:
+                    previewView.setImageURI(Uri.parse(path));
+
+
                 } else {
                     previewView.setImageURI(null);
                     //TODO: better approach?

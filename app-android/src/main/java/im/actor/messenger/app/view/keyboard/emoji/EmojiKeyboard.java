@@ -79,6 +79,7 @@ public class EmojiKeyboard extends BaseKeyboard implements OnSmileClickListener,
         //messaage.getText().replace(Math.min(start, end),
          //       Math.max(start, end), cs, 0, 1);
 
+
         /*
         View v =  new ImageView(this.activity);
         ImageView image;
@@ -96,8 +97,10 @@ public class EmojiKeyboard extends BaseKeyboard implements OnSmileClickListener,
 
         */
 
+        /* Animated GIF playing in edittext*/
+
+
         SpannableStringBuilder sb = new SpannableStringBuilder();
-        sb.append("Text followed by animated gif: ");
         String dummyText = "dummy";
         sb.append(dummyText);
         try {
@@ -112,7 +115,9 @@ public class EmojiKeyboard extends BaseKeyboard implements OnSmileClickListener,
         }
         messageBody.setText(sb);
 
-       // messageBody.getText().insert(selectionEnd, appendString);
+       // char[] testString = {55357,56850};
+      //  messageBody.setText(testString,0,2);
+     //   messageBody.getText().insert(selectionEnd, appendString);
     }
 
     @Override

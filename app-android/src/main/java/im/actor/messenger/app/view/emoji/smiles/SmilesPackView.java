@@ -9,19 +9,29 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.style.ImageSpan;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import im.actor.messenger.R;
+import im.actor.messenger.app.AnimatedGifDrawable;
+import im.actor.messenger.app.AnimatedImageSpan;
 import im.actor.messenger.app.view.emoji.SmileProcessor;
 import im.actor.messenger.app.view.keyboard.emoji.smiles.OnSmileClickListener;
+import im.actor.runtime.android.AndroidContext;
 
 import static im.actor.messenger.app.core.Core.getSmileProcessor;
 
@@ -199,15 +209,92 @@ public class SmilesPackView extends View {
                                     (smileysX[i] + 1) * smileySrcSize - 1, (smileysY[i] + 1) * smileySrcSize - 1);
 
                             if(tabcount == 5){
+
+                                /*
+                                 //on 5th Pannel show number 8 emoji
+                                //Nishant Start
                                 Resources res = getContext().getResources();
-                                int id = R.drawable.number8emoji;
+                                int id = R.drawable.pikachu;
                                 Rect rect1 = new Rect();
-                                rect1.set(5,5,50,50);
+                                rect1.set(5,5,150,150);
                                 Bitmap bitmap_nis;
                                 bitmap_nis = BitmapFactory.decodeResource(res,id);
 
-                                canvas.drawBitmap(bitmap_nis, new Rect(0,0,100,100), rect1, paint);
+                                canvas.drawBitmap(bitmap_nis, new Rect(0, 0, 100, 100), rect1, paint);
+                                //Nishant End
+                                */
+
                                 //canvas.drawBitmap(img, sectionRect, rect, paint);
+
+                                LinearLayout layout = new LinearLayout(AndroidContext.getContext());
+                                final TextView textView = new TextView(AndroidContext.getContext());
+                                textView.setVisibility(View.VISIBLE);
+
+
+                                final ImageView imageView1 = new ImageView(AndroidContext.getContext());
+                                imageView1.setVisibility(View.VISIBLE);
+                                imageView1.setImageResource(R.drawable.pikachu);
+
+                                final ImageView imageView2 = new ImageView(AndroidContext.getContext());
+                                imageView2.setVisibility(View.VISIBLE);
+                                imageView2.setImageResource(R.drawable.lolgif);
+
+
+
+
+                                //textView.setText("Hello world - Nishant");
+                                //textView.setTextColor(Color.BLACK);
+
+                                /*
+                                SpannableStringBuilder sb = new SpannableStringBuilder();
+                                String dummyText = "dummy";
+                                sb.append(dummyText);
+                                try {
+                                    sb.setSpan(new AnimatedImageSpan(new AnimatedGifDrawable(AndroidContext.getContext().getAssets().open("pikachu.gif"), new AnimatedGifDrawable.UpdateListener() {
+                                        @Override
+                                        public void update() {
+                                            textView.postInvalidate();
+                                        }
+                                    })), sb.length() - dummyText.length(), sb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                textView.setText(sb);
+                                */
+
+                                layout.addView(textView);
+                                layout.addView(imageView1);
+                                layout.addView(imageView2);
+
+
+                                layout.measure(canvas.getWidth(), canvas.getHeight());
+                                layout.layout(0, 0, canvas.getWidth(), canvas.getHeight());
+
+                                // To place the text view somewhere specific:
+                                //canvas.translate(0, 0);
+
+                                layout.draw(canvas);
+
+                                //Nishant Canvas 2
+                                //canvas.drawBitmap(img, sectionRect, rect, paint);
+
+                                /*
+                                LinearLayout layout2 = new LinearLayout(AndroidContext.getContext());
+
+                                final ImageView imageView2 = new ImageView(AndroidContext.getContext());
+                                imageView1.setVisibility(View.VISIBLE);
+                                imageView1.setImageResource(R.drawable.lolgif);
+
+                                layout.addView(imageView2);
+                                layout.measure(canvas.getWidth(), canvas.getHeight());
+                                layout.layout(0, 0, canvas.getWidth(), canvas.getHeight());
+
+                                //To place the text view somewhere specific:
+                                canvas.translate(250, 0);
+
+                                layout2.draw(canvas);
+                                */
+
                             }
                             else
                             {

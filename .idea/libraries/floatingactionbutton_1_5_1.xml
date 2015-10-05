@@ -8,6 +8,8 @@
       <root url="file://$PROJECT_DIR$/app-android/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.5.1/res" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.getbase/floatingactionbutton/1.5.1/f194df8ba56d57c3bfc8f5a4398bba6edaab6981/floatingactionbutton-1.5.1-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

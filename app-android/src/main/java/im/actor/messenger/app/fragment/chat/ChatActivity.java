@@ -419,7 +419,17 @@ public class ChatActivity extends ActorEditTextActivity {
             keyboardUtils.setImeVisibility(messageEditText, false);
         }
 
-        messenger().sendMessage(peer, rawText);
+        if (rawText.toString().equals("dummy")) {
+
+            String path = "res:/" + R.drawable.pikachu; // Only one slash after res:
+
+           // execute(messenger().sendUri(peer, Uri.parse(path)));
+           // messenger().sendPhoto(peer, path);
+            messenger().sendMessage(peer, rawText);
+        } else{
+
+            messenger().sendMessage(peer, rawText);
+        }
     }
 
     @Override
