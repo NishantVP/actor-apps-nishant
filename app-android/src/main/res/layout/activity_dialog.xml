@@ -5,6 +5,7 @@
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -191,5 +192,30 @@
         </FrameLayout>
 
     </FrameLayout>
+
+   <RelativeLayout
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+       android:layout_alignParentEnd="true"
+       android:layout_alignParentRight="true"
+       android:layout_above="@id/fl_send_panel"
+       android:visibility="gone"
+       android:id="@+id/pipe_emoji_linearLayout"
+       android:background="@color/selector_ripple">
+
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:src="@drawable/sachinicon"/>
+       <ImageButton
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:layout_alignParentTop="true"
+           android:layout_alignParentLeft="true"
+           android:src="@drawable/drawer_close"
+           android:onClick="drawerCloseClicked"/>
+
+   </RelativeLayout>
 
 </RelativeLayout>

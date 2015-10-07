@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v7.view.ActionMode;
 import android.text.Editable;
@@ -24,8 +25,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,7 +67,7 @@ import static im.actor.messenger.app.view.ViewUtils.goneView;
 import static im.actor.messenger.app.view.ViewUtils.showView;
 import static im.actor.messenger.app.view.emoji.SmileProcessor.emoji;
 
-public class ChatActivity extends ActorEditTextActivity {
+public class ChatActivity extends ActorEditTextActivity   {
 
     public static Intent build(Peer peer, boolean compose, Context context) {
         final Intent intent = new Intent(context, ChatActivity.class);
@@ -166,6 +169,9 @@ public class ChatActivity extends ActorEditTextActivity {
     // Is Activity opened from Compose
     private boolean isCompose = false;
 
+    //By Nishant
+    RelativeLayout pipe_emojis_layout;
+
     @Override
     public void onCreate(Bundle saveInstance) {
         // Reading peer of chat
@@ -186,6 +192,10 @@ public class ChatActivity extends ActorEditTextActivity {
 
         // Mentions
         mentionsList = (ListView) findViewById(R.id.mentionsList);
+
+        //By Nishant
+        pipe_emojis_layout = (RelativeLayout)findViewById(R.id.pipe_emoji_linearLayout);
+
 
         //Quote
         quoteContainer = (FrameLayout) findViewById(R.id.quoteContainer);
@@ -808,4 +818,20 @@ public class ChatActivity extends ActorEditTextActivity {
 
         }
     }
+
+    //Written by Nishant
+    public void pipeEmojiClicked(View view)
+    {
+        Toast.makeText(this,"Pipe Emoji clicked",Toast.LENGTH_LONG).show();
+        //setContentView(R.layout.fragment_pipe_emoji);
+        pipe_emojis_layout.setVisibility(View.VISIBLE);
+
+    }
+    public void drawerCloseClicked(View view)
+    {
+        //Toast.makeText(this,"Pipe Emoji clicked",Toast.LENGTH_LONG).show();
+        pipe_emojis_layout.setVisibility(View.GONE);
+
+    }
+
 }
