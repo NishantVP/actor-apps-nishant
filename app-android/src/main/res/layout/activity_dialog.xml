@@ -96,7 +96,7 @@
             android:inputType="text|textCapSentences|textAutoCorrect|textMultiLine"
             android:maxLines="4"
             android:paddingBottom="10dp"
-            android:paddingLeft="56dp"
+            android:paddingLeft="112dp"
             android:paddingRight="112dp"
             android:paddingTop="10dp"
             android:textColor="@color/text_primary"
@@ -125,6 +125,26 @@
                 android:layout_gravity="top"
                 android:layout_marginTop="46dp" />
         </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="56dp"
+            android:layout_gravity="left|bottom">
+
+            <ImageButton
+                android:id="@+id/ib_pipeEmoji"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_flat"
+                android:padding="7dp"
+                android:src="@drawable/headphonesemojismall"
+                android:scaleType="fitXY"
+                android:onClick="pipeEmojiClicked"/>
+
+
+        </FrameLayout>
+
         <FrameLayout
             android:layout_marginRight="56dp"
             android:layout_width="56dp"
