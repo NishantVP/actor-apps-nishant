@@ -143,9 +143,7 @@ android {
 }
 
 dependencies {
-
     compile project(':core-android')
-
     // UI
     compile 'com.droidkit:progress:0.5'
     compile 'com.soundcloud.android:android-crop:1.0.0@aar'
@@ -157,27 +155,23 @@ dependencies {
     compile 'com.getbase:floatingactionbutton:1.5.1'
     compile 'com.afollestad:material-dialogs:0.7.3.1'
     compile 'org.pegdown:pegdown:1.5.0'
-
     // Phone parser
     compile files('libs/libphonenumber-5.9.jar')
-
     // Android Support
     compile 'com.android.support:support-v4:23.0.1'
     compile 'com.android.support:support-v13:23.0.1'
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:palette-v7:23.0.1'
     compile 'com.android.support:recyclerview-v7:23.0.1'
-
     //GCM
     releaseCompile 'com.google.android.gms:play-services-gcm:7.5.0'
     debugCompile 'com.google.android.gms:play-services-gcm:7.5.0'
-
     // Integration
     compile 'com.splunk.mint:mint:4.0.8'
+    //    // Annotation processing
+    //    apt "org.androidannotations:androidannotations:3.3.2"
+    //    compile "org.androidannotations:androidannotations-api:3.3.2"
 
-//    // Annotation processing
-//    apt "org.androidannotations:androidannotations:3.3.2"
-//    compile "org.androidannotations:androidannotations-api:3.3.2"
 }
 
 task dist(dependsOn: ['assembleRelease', 'assembleFree']) {

@@ -22,6 +22,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -48,6 +51,10 @@ import im.actor.messenger.R;
 import im.actor.messenger.app.Intents;
 import im.actor.messenger.app.fragment.chat.mentions.MentionsAdapter;
 import im.actor.messenger.app.fragment.chat.messages.MessagesFragment;
+import im.actor.messenger.app.rocker_classes.emoji.Emojicon;
+import im.actor.messenger.app.rocker_classes.emoji.EmojiconEditText;
+import im.actor.messenger.app.rocker_classes.emoji.EmojiconGridFragment;
+import im.actor.messenger.app.rocker_classes.emoji.EmojiconsFragment;
 import im.actor.messenger.app.util.RandomUtil;
 import im.actor.messenger.app.util.Screen;
 import im.actor.messenger.app.view.AvatarView;
@@ -67,7 +74,7 @@ import static im.actor.messenger.app.view.ViewUtils.goneView;
 import static im.actor.messenger.app.view.ViewUtils.showView;
 import static im.actor.messenger.app.view.emoji.SmileProcessor.emoji;
 
-public class ChatActivity extends ActorEditTextActivity   {
+public class ChatActivity extends ActorEditTextActivity implements EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener  {
 
     public static Intent build(Peer peer, boolean compose, Context context) {
         final Intent intent = new Intent(context, ChatActivity.class);
@@ -171,6 +178,8 @@ public class ChatActivity extends ActorEditTextActivity   {
 
     //By Nishant
     RelativeLayout pipe_emojis_layout;
+    EmojiconEditText mEditEmojicon;
+    FrameLayout MessagesView;
 
     @Override
     public void onCreate(Bundle saveInstance) {
@@ -194,7 +203,8 @@ public class ChatActivity extends ActorEditTextActivity   {
         mentionsList = (ListView) findViewById(R.id.mentionsList);
 
         //By Nishant
-        pipe_emojis_layout = (RelativeLayout)findViewById(R.id.pipe_emoji_linearLayout);
+        pipe_emojis_layout = (RelativeLayout)findViewById(R.id.pipe_emoji_Layout);
+        MessagesView = (FrameLayout)findViewById(R.id.messagesFragment);
 
 
         //Quote
@@ -220,7 +230,29 @@ public class ChatActivity extends ActorEditTextActivity   {
         sendText = getIntent().getStringExtra("send_text");
         forwardDocDescriptor = getIntent().getStringExtra("forward_doc_descriptor");
         forwardDocIsDoc = getIntent().getBooleanExtra("forward_doc_is_doc", true);
+
+        //Nishant
+        //setEmojiconFragment(false);
     }
+
+    //Nishant
+    @Override
+    public void onEmojiconClicked(Emojicon emojicon) {
+        EmojiconsFragment.input(mEditEmojicon, emojicon);
+    }
+
+    @Override
+    public void onEmojiconBackspaceClicked(View v) {
+        EmojiconsFragment.backspace(mEditEmojicon);
+    }
+
+    private void setEmojiconFragment(boolean useSystemDefault) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.emojicons, EmojiconsFragment.newInstance(useSystemDefault))
+                .commit();
+    }
+
 
     @Override
     protected Fragment onCreateFragment() {
@@ -824,6 +856,11 @@ public class ChatActivity extends ActorEditTextActivity   {
     {
         Toast.makeText(this,"Pipe Emoji clicked",Toast.LENGTH_LONG).show();
         //setContentView(R.layout.fragment_pipe_emoji);
+        Animation bottomUp = AnimationUtils.loadAnimation(this, R.anim.bottom_up);
+
+        //ViewGroup hiddenPanel = (ViewGroup)findViewById(R.id.hidden_panel);
+        //MessagesView.startAnimation(bottomUp);
+        //hiddenPanel.setVisibility(View.VISIBLE);
         pipe_emojis_layout.setVisibility(View.VISIBLE);
 
     }

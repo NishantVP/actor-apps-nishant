@@ -19,7 +19,8 @@
         android:id="@+id/messagesFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/mentionsList" />
+        android:layout_above="@+id/mentionsList"
+        />
 
     <ImageView
         android:layout_width="fill_parent"
@@ -201,7 +202,7 @@
        android:layout_alignParentRight="true"
        android:layout_above="@id/fl_send_panel"
        android:visibility="gone"
-       android:id="@+id/pipe_emoji_linearLayout"
+       android:id="@+id/pipe_emoji_Layout"
        android:background="@color/selector_ripple">
 
        <ImageView
@@ -217,5 +218,12 @@
            android:onClick="drawerCloseClicked"/>
 
    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/emojicons"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
 
 </RelativeLayout><!-- From: file:/home/nishant/AndroidStudioProjects/actor-apps/app-android/src/main/res/layout/activity_dialog.xml -->

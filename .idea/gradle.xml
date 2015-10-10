@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/core-android" />
             <option value="$PROJECT_DIR$/core-cocoa" />
             <option value="$PROJECT_DIR$/core-js" />
+            <option value="$PROJECT_DIR$/library_rocker" />
             <option value="$PROJECT_DIR$/runtime" />
             <option value="$PROJECT_DIR$/runtime-android" />
             <option value="$PROJECT_DIR$/runtime-cocoa" />

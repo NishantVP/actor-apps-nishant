@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/core-android/core-android.iml" filepath="$PROJECT_DIR$/core-android/core-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/core-cocoa/core-cocoa.iml" filepath="$PROJECT_DIR$/core-cocoa/core-cocoa.iml" />
       <module fileurl="file://$PROJECT_DIR$/core-js/core-js.iml" filepath="$PROJECT_DIR$/core-js/core-js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_rocker/library_rocker.iml" filepath="$PROJECT_DIR$/library_rocker/library_rocker.iml" />
       <module fileurl="file://$PROJECT_DIR$/runtime/runtime.iml" filepath="$PROJECT_DIR$/runtime/runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/runtime-android/runtime-android.iml" filepath="$PROJECT_DIR$/runtime-android/runtime-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/runtime-cocoa/runtime-cocoa.iml" filepath="$PROJECT_DIR$/runtime-cocoa/runtime-cocoa.iml" />

@@ -152,10 +152,12 @@ public class EmojiKeyboard extends BaseKeyboard implements OnSmileClickListener,
             }
         }));
 
-        final SmilePagerAdapter mEmojisAdapter = new SmilePagerAdapter(this);
+        //final SmilePagerAdapter mEmojisAdapter = new SmilePagerAdapter(this);
 
-        emojiPager.setAdapter(mEmojisAdapter);
-        emojiPagerIndicator.setViewPager(emojiPager);
+        //emojiPager.setAdapter(mEmojisAdapter);
+        //emojiPagerIndicator.setViewPager(emojiPager);
+
+
 
         //emojiPagerIndicator.setLayoutParams(new RelativeLayout.LayoutParams(Screen.dp(58 * mEmojisAdapter.getCount()), Screen.dp(48)));
 //        emojiPager.postDelayed(new Runnable() {

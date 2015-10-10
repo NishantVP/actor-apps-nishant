@@ -8,9 +8,9 @@ package com.google.android.gms.gcm;
 
 public final class R {
 	public static final class attr {
-		public static final int circleCrop = 0x7f010077;
-		public static final int imageAspectRatio = 0x7f010076;
-		public static final int imageAspectRatioAdjust = 0x7f010075;
+		public static final int circleCrop = 0x7f01007c;
+		public static final int imageAspectRatio = 0x7f01007b;
+		public static final int imageAspectRatioAdjust = 0x7f01007a;
 	}
 	public static final class color {
 		public static final int common_action_bar_splitter = 0x7f0d0028;
@@ -23,8 +23,8 @@ public final class R {
 		public static final int common_signin_btn_light_text_disabled = 0x7f0d002f;
 		public static final int common_signin_btn_light_text_focused = 0x7f0d0030;
 		public static final int common_signin_btn_light_text_pressed = 0x7f0d0031;
-		public static final int common_signin_btn_text_dark = 0x7f0d00e5;
-		public static final int common_signin_btn_text_light = 0x7f0d00e6;
+		public static final int common_signin_btn_text_dark = 0x7f0d00e7;
+		public static final int common_signin_btn_text_light = 0x7f0d00e8;
 	}
 	public static final class drawable {
 		public static final int common_full_open_on_phone = 0x7f020053;
@@ -53,17 +53,17 @@ public final class R {
 		public static final int common_signin_btn_text_normal_light = 0x7f02006a;
 		public static final int common_signin_btn_text_pressed_dark = 0x7f02006b;
 		public static final int common_signin_btn_text_pressed_light = 0x7f02006c;
-		public static final int ic_plusone_medium_off_client = 0x7f0200d5;
-		public static final int ic_plusone_small_off_client = 0x7f0200d6;
-		public static final int ic_plusone_standard_off_client = 0x7f0200d7;
-		public static final int ic_plusone_tall_off_client = 0x7f0200d8;
+		public static final int ic_plusone_medium_off_client = 0x7f020433;
+		public static final int ic_plusone_small_off_client = 0x7f020434;
+		public static final int ic_plusone_standard_off_client = 0x7f020435;
+		public static final int ic_plusone_tall_off_client = 0x7f020436;
 	}
 	public static final class id {
-		public static final int adjust_height = 0x7f0e0027;
-		public static final int adjust_width = 0x7f0e0028;
+		public static final int adjust_height = 0x7f0e0029;
+		public static final int adjust_width = 0x7f0e002a;
 		public static final int none = 0x7f0e0014;
 		public static final int normal = 0x7f0e0010;
-		public static final int wrap_content = 0x7f0e002c;
+		public static final int wrap_content = 0x7f0e002e;
 	}
 	public static final class integer {
 		public static final int google_play_services_version = 0x7f0a0007;
@@ -109,7 +109,7 @@ public final class R {
 	public static final class style {
 	}
 	public static final class styleable {
-		public static final int[] LoadingImageView = { 0x7f010075, 0x7f010076, 0x7f010077 };
+		public static final int[] LoadingImageView = { 0x7f01007a, 0x7f01007b, 0x7f01007c };
 		public static final int LoadingImageView_circleCrop = 2;
 		public static final int LoadingImageView_imageAspectRatio = 1;
 		public static final int LoadingImageView_imageAspectRatioAdjust = 0;

@@ -12,5 +12,5 @@ public final class BuildConfig {
   public static final String VERSION_NAME = "debug";
   // Fields from build type: debug
   public static final boolean ENABLE_KEEP_ALIVE = false;
-  public static final String VERSION_TITLE = "Debug Version (06/10/15 20:20:55)";
+  public static final String VERSION_TITLE = "Debug Version (09/10/15 16:55:08)";
 }
