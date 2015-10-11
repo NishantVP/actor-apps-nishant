@@ -19,8 +19,7 @@
         android:id="@+id/messagesFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/mentionsList"
-        />
+        android:layout_above="@+id/pipe_emoji_Layout" />
 
     <ImageView
         android:layout_width="fill_parent"
@@ -144,6 +143,17 @@
                 android:scaleType="fitXY"
                 android:onClick="pipeEmojiClicked"/>
 
+            <ImageButton
+                android:id="@+id/ib_pipeDownArrow"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_flat"
+                android:padding="7dp"
+                android:src="@drawable/down_arrow"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:onClick="drawerDownClicked"/>
+
 
         </FrameLayout>
 
@@ -194,30 +204,36 @@
 
     </FrameLayout>
 
-   <RelativeLayout
-       android:orientation="horizontal"
-       android:layout_width="match_parent"
-       android:layout_height="200dp"
-       android:layout_alignParentEnd="true"
-       android:layout_alignParentRight="true"
-       android:layout_above="@id/fl_send_panel"
-       android:visibility="gone"
-       android:id="@+id/pipe_emoji_Layout"
-       android:background="@color/selector_ripple">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/fl_send_panel"
+        android:visibility="gone"
+        android:id="@+id/pipe_emoji_Layout"
+        android:background="@color/selector_ripple">
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:src="@drawable/sachinicon"/>
-       <ImageButton
-           android:layout_width="30dp"
-           android:layout_height="30dp"
-           android:layout_alignParentTop="true"
-           android:layout_alignParentLeft="true"
-           android:src="@drawable/drawer_close"
-           android:onClick="drawerCloseClicked"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/sachinicon"/>
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/drawer_close"
+            android:onClick="drawerCloseClicked"/>
 
-   </RelativeLayout>
+        <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/PipeWebview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
+
+    </RelativeLayout>
 
     <FrameLayout
         android:id="@+id/emojicons"

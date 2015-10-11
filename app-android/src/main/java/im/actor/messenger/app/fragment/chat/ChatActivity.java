@@ -25,8 +25,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -180,6 +182,9 @@ public class ChatActivity extends ActorEditTextActivity implements EmojiconGridF
     RelativeLayout pipe_emojis_layout;
     EmojiconEditText mEditEmojicon;
     FrameLayout MessagesView;
+    ImageButton pipeEmojiButton;
+    ImageButton pipeEmojiDownButton;
+    WebView myWebView;
 
     @Override
     public void onCreate(Bundle saveInstance) {
@@ -205,6 +210,7 @@ public class ChatActivity extends ActorEditTextActivity implements EmojiconGridF
         //By Nishant
         pipe_emojis_layout = (RelativeLayout)findViewById(R.id.pipe_emoji_Layout);
         MessagesView = (FrameLayout)findViewById(R.id.messagesFragment);
+        WebView myWebView = (WebView) findViewById(R.id.PipeWebview);
 
 
         //Quote
@@ -858,16 +864,23 @@ public class ChatActivity extends ActorEditTextActivity implements EmojiconGridF
         //setContentView(R.layout.fragment_pipe_emoji);
         Animation bottomUp = AnimationUtils.loadAnimation(this, R.anim.bottom_up);
 
-        //ViewGroup hiddenPanel = (ViewGroup)findViewById(R.id.hidden_panel);
-        //MessagesView.startAnimation(bottomUp);
-        //hiddenPanel.setVisibility(View.VISIBLE);
+        pipeEmojiButton = (ImageButton)findViewById(R.id.ib_pipeEmoji);
+        pipeEmojiDownButton = (ImageButton)findViewById(R.id.ib_pipeDownArrow);
+
         pipe_emojis_layout.setVisibility(View.VISIBLE);
+        pipeEmojiButton.setVisibility(View.GONE);
+        pipeEmojiDownButton.setVisibility(View.VISIBLE);
+
+        //MessagesView.startAnimation(bottomUp);
+        //pipe_emojis_layout.startAnimation(bottomUp);
 
     }
-    public void drawerCloseClicked(View view)
+    public void drawerDownClicked(View view)
     {
         //Toast.makeText(this,"Pipe Emoji clicked",Toast.LENGTH_LONG).show();
         pipe_emojis_layout.setVisibility(View.GONE);
+        pipeEmojiButton.setVisibility(View.VISIBLE);
+        pipeEmojiDownButton.setVisibility(View.GONE);
 
     }
 
